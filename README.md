@@ -1,3 +1,17 @@
+# Amazon_Clone
+Building an Amazon Clone Using React
+
+
+### Description
+This project aims to recreate the e-commerce giant, Amazon, using React. By leveraging React's powerful features, we strive to build a fully functional and visually appealing online marketplace. 
+
+### Technologies Used
+   - React
+   - HTML/CSS
+   - JavaScript
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
