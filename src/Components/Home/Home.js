@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Home.css";
+import "./Home.scss";
 import Pagination from "./Pagination/Pagination";
 import Product from "../Products/Product";
 
@@ -32,7 +32,7 @@ function Home() {
   }, [activeIndex]);
 
   return (
-    <div className="home">
+    <div className="home container-wrapper">
       {sliderImg.map((slide, index) => (
         <div
           key={index}
@@ -40,16 +40,20 @@ function Home() {
         >
           <div className="home-container">
             <img className="home-image" src={slide.urls} alt="" />
-            <div className="home-row">
-           
+
+            <div className="home-row container-common">
+              <Product />
+              <Product />
+              <Product />
+              <Product />
+              <Product />
+              <Product />
+              <Product />
+              <Product />
+            </div>
+            <div className="home-row"></div>
           </div>
-          </div>
-          <Product 
-            id="12321341"
-            title="The Lean StartupL How Constant Innovation Create "
-            />
         </div>
-        
       ))}
       <Pagination
         prevSlide={() =>
@@ -59,7 +63,6 @@ function Home() {
           setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
         }
       />
-       
     </div>
   );
 }
