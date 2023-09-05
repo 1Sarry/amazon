@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Home.scss";
 import Pagination from "./Pagination/Pagination";
 import Product from "../Products/Product";
+import Product2 from "../Products/Product2";
+import ProductPromo from "../Products/ProductPromo";
 
 function Home() {
   const sliderImg = [
@@ -43,13 +45,38 @@ function Home() {
 
             <div className="home-row container-common">
               <Product />
-              <Product />
-              <Product />
-              <Product />
-              <Product />
-              <Product />
-              <Product />
-              <Product />
+              <Product2 
+              title="Toys Under $30"
+              image="./Kids.jpg"
+              link="Shop now"
+              />
+              <Product2 
+              title="Electronics"
+              image="./Electronics.jpg"
+              link="See more"
+              />
+              <ProductPromo/>
+              <Product2 
+              
+              title="Shop School Essentials"
+              image="./School.jpg"
+              link="See more"
+              />
+              <Product2 
+              title="Home & Kitchen Under $30"
+              image="./Home.jpg"
+              link="Shop now"
+              />
+              <Product2 
+              title="Health & Personal Care"
+              image="./Health.jpg"
+              link="Shop now"
+              />
+              <Product2 
+              title="Beauty Picks"
+              image="Beauty.jpg"
+              link="Shop now"
+              />
             </div>
             <div className="home-row"></div>
           </div>

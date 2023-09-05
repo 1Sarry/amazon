@@ -19,11 +19,11 @@ function Product({ id, title, image, price, rating }) {
           </div> */}
       </div>
       <div className="prod-images">
-        <div className="img-wrapper">
+        <div className="img-wrapper" style={{ marginBottom: 10 }}>
           <img src={headset} alt="" />
           <span className="prod-name">Headsets</span>
         </div>
-        <div className="img-wrapper">
+        <div className="img-wrapper" style={{ marginBottom: 10 }}>
           <img src={keyboard} alt="" />
           <span className="prod-name">Keyboards</span>
         </div>
