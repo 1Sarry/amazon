@@ -4,7 +4,7 @@ import CurrencyFormat from "react-currency-format";
 
 function Subtotal() {
   return (
-    <div>
+    <div className="subtotal">
       <CurrencyFormat
         renderText={(value) => (
           <div>
@@ -20,8 +20,9 @@ function Subtotal() {
         value={0}
         displayType={"text"}
         thousandSeparator={true}
-        prefix={'$'} 
+        prefix={"$"}
       />
+      <button>Proceed to Checkout</button>
     </div>
   );
 }

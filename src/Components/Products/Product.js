@@ -4,8 +4,23 @@ import headset from "../../Assets/Images/headset1.jpg";
 import keyboard from "../../Assets/Images/keyboad2.jpg";
 import mouse from "../../Assets/Images/mouse3.jpg";
 import chairs from "../../Assets/Images/chairs4.jpg";
+import { useStateValue } from "../StateProvider/StateProvider";
 
 function Product({ id, title, image, price, rating }) {
+  const [{ basket }, dispatch] = useStateValue();
+  const addToBasket = () => {
+    dispatch({
+      type: "ADD_To_BASKET",
+      item: {
+        id: id,
+        title: title,
+        image: image,
+        price: price,
+        rating: rating,
+      },
+    });
+  };
+
   return (
     <div className="product ">
       <div className="product-info">
@@ -40,8 +55,13 @@ function Product({ id, title, image, price, rating }) {
           src="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL.SX325_BO1,204,203,200.jpg"
           alt=""
         /> */}
-      <div className="card-link">
-        <a href="">See more</a>
+      <div className="card-btns-wrapper">
+        <div className="card-link">
+          <a href="">See more</a>
+        </div>
+        <div className="add-btn">
+          <button onClick={addToBasket}>Add To Cart</button>
+        </div>
       </div>
     </div>
   );

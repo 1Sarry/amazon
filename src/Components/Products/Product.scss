@@ -7,7 +7,7 @@
   //justify-content: flex-end;
   //margin: 10px;
   padding: 20px;
- 
+
   //width: 100%;
   //max-height: 400px;
   min-width: 100px;
@@ -17,7 +17,7 @@
 }
 .product:hover {
   cursor: pointer;
-  transform: scale(1.01);
+  transform: scale(1);
   transition: all 0.5s ease-in-out;
 }
 //  Card -1
@@ -67,7 +67,7 @@
 }
 .product2:hover {
   cursor: pointer;
-  transform: scale(1.01);
+  transform: scale(1);
   transition: all 0.5s ease-in-out;
 }
 .prod2-images {
@@ -90,19 +90,17 @@
   margin-bottom: 10px;
 }
 
-
-
 // Product Promo
 .product-promo {
   background-color: transparent;
   box-shadow: none;
   padding: 0;
-  padding-bottom: 0!important;
+  padding-bottom: 0 !important;
 }
 .card-promo {
- display: flex;
- flex-direction: column;
- justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .signin {
   height: 130px;
@@ -128,9 +126,28 @@
   width: 90%;
   margin: 20px 20px 0 20px;
   //margin: 20px;
- // margin: auto;
+  // margin: auto;
 }
 .promo-image img {
   width: 100%;
   object-fit: contain;
+}
+.card-btns-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.add-btn button {
+  background: #f0c14b;
+  border: 10x solid;
+  margin-top: 10px;
+  border-color: #c9a23f #eed084 #dbbd71;
+  padding:  5px 7px;
+  border-radius: 5px;cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+.add-btn button:hover {
+  background: #ffd87d;
+  transition: all .3s ease-in-out;
 }
