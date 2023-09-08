@@ -2,21 +2,20 @@ import React from "react";
 import "./Product.scss";
 import { useStateValue } from "../StateProvider/StateProvider";
 
-
-
-const Product2 = ({ title, image, link }) => {
+const Product2 = ({ id, title, image, price, link, rating }) => {
   const [{ basket }, dispatch] = useStateValue();
-  console.log('This is the basket', basket)
+  console.log("This is the basket", basket);
 
   const addToBasket = () => {
     dispatch({
-      type: 'ADD_To_BASKET',
+      type: "ADD_TO_BASKET",
       item: {
-        // id: id,
+        id: id,
         title: title,
         image: image,
-        // price: price,
-        //link: link, 
+        price: price,
+        //link: link,
+        rating: rating,
       },
     });
   };
@@ -24,6 +23,17 @@ const Product2 = ({ title, image, link }) => {
     <div className="product2 ">
       <div className="product2-info">
         <h2>{title}</h2>
+        <p className="product-price">
+          <small>$</small>
+          <strong>{price}</strong>
+        </p>
+      </div>
+      <div className="product-rating">
+        {Array(rating)
+          .fill()
+          .map(() => (
+            <p>⭐</p>
+          ))}
       </div>
       <div className="prod2-images">
         <div className="img-wrapper2">

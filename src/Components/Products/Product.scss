@@ -67,7 +67,7 @@
 }
 .product2:hover {
   cursor: pointer;
-  transform: scale(1);
+  transform: scale(1.015);
   transition: all 0.5s ease-in-out;
 }
 .prod2-images {
@@ -87,9 +87,15 @@
 .product2-info h2 {
   font-weight: 700;
   font-size: 21px;
+  margin-bottom: 0;
+}
+.product-price {
   margin-bottom: 10px;
 }
-
+.product-rating {
+  display: flex;
+  margin-bottom: 8px;
+}
 // Product Promo
 .product-promo {
   background-color: transparent;
@@ -142,12 +148,13 @@
   border: 10x solid;
   margin-top: 10px;
   border-color: #c9a23f #eed084 #dbbd71;
-  padding:  5px 7px;
-  border-radius: 5px;cursor: pointer;
+  padding: 5px 7px;
+  border-radius: 5px;
+  cursor: pointer;
   font-size: 13px;
   font-weight: 700;
 }
 .add-btn button:hover {
   background: #ffd87d;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }

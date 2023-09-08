@@ -44,38 +44,55 @@ function Home() {
             <img className="home-image" src={slide.urls} alt="" />
 
             <div className="home-row container-common">
-              <Product />
-              <Product2 
-              title="Toys Under $30"
-              image="./Kids.jpg"
-              link="Shop now"
+              <Product id="12321340" />
+              <Product2
+                id="12321341"
+                title="Toys Under $30"
+                price={28}
+                image="./Kids.jpg"
+                link="Shop now"
+                rating={3}
               />
-              <Product2 
-              title="Electronics"
-              image="./Electronics.jpg"
-              link="See more"
+              <Product2
+                id="12321342"
+                title="Electronics"
+                price={25}
+                image="./Electronics.jpg"
+                link="See more"
+                rating={3}
               />
-              <ProductPromo/>
-              <Product2 
-              
-              title="Shop School Essentials"
-              image="./School.jpg"
-              link="See more"
+              <ProductPromo />
+              <Product2
+                id="12321343"
+                title="Shop School Essentials"
+                price={90}
+                image="./School.jpg"
+                link="See more"
+                rating={3}
               />
-              <Product2 
-              title="Home & Kitchen Under $30"
-              image="./Home.jpg"
-              link="Shop now"
+              <Product2
+                id="12321344"
+                title="Home & Kitchen Under $30"
+                price={125}
+                image="./Home.jpg"
+                link="Shop now"
+                rating={3}
               />
-              <Product2 
-              title="Health & Personal Care"
-              image="./Health.jpg"
-              link="Shop now"
+              <Product2
+                id="12321345"
+                title="Health & Personal Care"
+                price={85}
+                image="./Health.jpg"
+                link="Shop now"
+                rating={3}
               />
-              <Product2 
-              title="Beauty Picks"
-              image="Beauty.jpg"
-              link="Shop now"
+              <Product2
+                id="12321346"
+                title="Beauty Picks"
+                price={10}
+                image="Beauty.jpg"
+                link="Shop now"
+                rating={3}
               />
             </div>
             <div className="home-row"></div>
