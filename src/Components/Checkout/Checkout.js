@@ -17,7 +17,7 @@ const Checkout = () => {
         />
         <h3>Hello</h3>
         <h2 className="checkout-title">Your Shopping Basket</h2>
-        {basket.map((item) => {
+        {basket.map((item) => (
           <CheckoutProduct
             id={item.id}
             title={item.title}
@@ -25,7 +25,7 @@ const Checkout = () => {
             price={item.price}
             rating={item.rating}
           />
-        })}
+        ))}
       </div>
       <div className="checkout-right">
         <Subtotal />
