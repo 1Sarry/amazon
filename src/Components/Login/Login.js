@@ -9,7 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [password, setPasswowrd] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   // Sign In
@@ -18,7 +18,8 @@ const Login = () => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        if (userCredential) navigate("/");
+        if (userCredential) 
+        navigate("/");
       })
       .catch((error) => {
         alert(error.message);
@@ -31,7 +32,8 @@ const Login = () => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        if (userCredential) navigate("/");
+        if (userCredential) 
+        navigate("/");
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -61,7 +63,7 @@ const Login = () => {
           <input
             type="password"
             value={password}
-            onChange={(e) => setPasswowrd(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <button
             type="submit"

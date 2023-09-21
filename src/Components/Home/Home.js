@@ -34,15 +34,18 @@ function Home() {
   }, [activeIndex]);
 
   return (
-    <div className="home container-wrapper">
-      {sliderImg.map((slide, index) => (
-        <div
-          key={index}
-          className={index === activeIndex ? "slides active" : "inactive"}
-        >
-          <div className="home-container">
+    <div className="home-main container-wrapper">
+      <div className="home">
+        {sliderImg.map((slide, index) => (
+          <div
+            key={index}
+            className={
+              index === activeIndex
+                ? " home-container container-common slides active"
+                : "inactive"
+            }
+          >
             <img className="home-image" src={slide.urls} alt="" />
-
             <div className="home-row container-common">
               <Product id="12321340" />
               <Product2
@@ -95,18 +98,17 @@ function Home() {
                 rating={3}
               />
             </div>
-            <div className="home-row"></div>
           </div>
-        </div>
-      ))}
-      <Pagination
-        prevSlide={() =>
-          setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
-        }
-        nextSlide={() =>
-          setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
-        }
-      />
+        ))}
+        <Pagination
+          prevSlide={() =>
+            setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
+          }
+          nextSlide={() =>
+            setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
+          }
+        />
+      </div>
     </div>
   );
 }

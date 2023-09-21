@@ -1,0 +1,27 @@
+.deals-container {
+  max-width: 1480px;
+  width: 100%;
+  margin: auto;
+}
+.deals-wrapper {
+  width: 92.2%;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  //padding: 20px 0;
+  h2 {
+    font-size: 21px;
+    font-weight: 700px;
+    margin-bottom: 20px;
+  }
+  .deals-header {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    span a {
+      color: #007185;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  }
+}

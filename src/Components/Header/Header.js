@@ -15,20 +15,22 @@ function Header() {
   };
   return (
     <div className="header">
-      <Link to="/">
-        <img
-          src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
-          alt=""
-          className="header-logo"
-        />
-      </Link>
+      <div className="header-logo-wrap">
+        <Link to="/">
+          <img
+            src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+            alt=""
+            className="header-logo"
+          />
+        </Link>
+      </div>
       <div className="header-search">
         <input type="text" className="header_searchInput" />
         <SearchIcon className="header_searchIcon " />
       </div>
-      <div onClick={handleAuthentication} className="header_nav">
-        <Link to={!user && "/login"}>
-          <div className="header-option">
+      <div  className="header_nav">
+        <Link to={!user && "/login"} className="header-clearLink">
+          <div onClick={handleAuthentication} className="header-option">
             <span className="header-optionLineOne">
               Hello {!user ? "Guest" : user.email}
             </span>
@@ -37,15 +39,18 @@ function Header() {
             </span>
           </div>
         </Link>
-        <div className="header-option">
-          <span className="header-optionLineOne">Returns</span>
-          <span className="header-optionLineTwo">& Orders</span>
-        </div>
+        <Link to="/orders">
+          <div className="header-option">
+            <span className="header-optionLineOne">Returns</span>
+            <span className="header-optionLineTwo">& Orders</span>
+          </div>
+        </Link>
         <div className="header-option">
           <span className="header-optionLineOne">Your</span>
           <span className="header-optionLineTwo">Prime</span>
         </div>
-        <Link to="/checkout  ">
+
+        <Link to="/checkout">
           <div className="header-optionBasket">
             <ShoppingBasketIcon />
             <span className="header-optionLineTwo header-basketCount">

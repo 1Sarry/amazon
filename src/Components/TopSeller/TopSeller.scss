@@ -1,0 +1,30 @@
+.top-seller-main {
+  max-width: 1480px;
+  width: 100%;
+  margin: auto;
+}
+
+.top-seller-container {
+  width: 92.2%;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  //padding: 20px 0;
+  h2{
+    font-size: 21px;
+    font-weight: 700px;
+    margin-bottom: 20px;
+  }
+}
+.mySwiper {
+  width: 100%;
+  
+}
+// .slider-images{
+//     height: 180px!important;
+// }
+.slider-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

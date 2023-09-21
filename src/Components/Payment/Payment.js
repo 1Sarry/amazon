@@ -6,30 +6,37 @@ import CheckoutProduct from "../Checkout/CheckoutProduct/CheckoutProduct";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import axios from "../../axios";
+import { db } from "../../firebase";
 
 const Payment = () => {
   const [{ basket, user }, dispatch] = useStateValue();
   const navigate = useNavigate();
   const getBasketTotal = (basket) =>
     basket?.reduce((amount, item) => item.price + amount, 0);
+
   const stripe = useStripe();
   const elements = useElements();
+
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
-  const [succeeded, setSucceeded] = useState(true);
+
+  const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState("");
+
   const [clientSecret, setClientSecret] = useState(true);
   useEffect(() => {
     const getClientSecret = async () => {
       const response = await axios({
         method: "post",
-        url: `/payments/create?total= ${getBasketTotal(basket) * 100}`,
+        url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
       });
       setClientSecret(response.data.clientSecret);
     };
     getClientSecret();
   }, [basket]);
   console.log("THE SECRET IS >>>", clientSecret);
+
+  /****************************/
   const handleSubmit = async (event) => {
     event.preventDefault();
     setProcessing(true);
@@ -41,17 +48,32 @@ const Payment = () => {
         },
       })
       .then(({ paymentIntent }) => {
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created
+          });
         setSucceeded(true);
         setError(null);
-        setProcessing(false);
-
+        setProcessing(false);  
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
         navigate("/orders");
       });
   };
+
+  /*********************************/
+
   const handleChange = (event) => {
     setDisabled(event.empty);
     setError(event.error ? event.error.message : "");
   };
+
   return (
     <div className="payment">
       <div className="payment-container">
