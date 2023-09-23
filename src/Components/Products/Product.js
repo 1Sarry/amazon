@@ -59,9 +59,9 @@ function Product({ id, title, image, price, rating }) {
         <div className="card-link">
           <a href="">See more</a>
         </div>
-        <div className="add-btn">
+        {/* <div className="add-btn">
           <button onClick={addToBasket}>Add To Cart</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

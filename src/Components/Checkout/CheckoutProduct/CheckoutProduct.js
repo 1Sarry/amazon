@@ -1,6 +1,5 @@
 import React from "react";
 import "./CheckoutProduct.scss";
-import Beauty from "../../../Assets/Images/Beauty.jpg";
 import { useStateValue } from "../../StateProvider/StateProvider";
 
 const CheckoutProduct = ({ id, image, title, price, rating, hideButton }) => {
